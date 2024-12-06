@@ -1,0 +1,16 @@
+body {
+  width: 80%;
+  margin: auto;
+  text-align: center;
+  align-items: center;
+}
+
+.wrapper {
+  background-color: #FFF8F0;
+  border-radius: 15px;
+  display: flex;
+}
+
+.image-container {
+  height: 100%;
+}

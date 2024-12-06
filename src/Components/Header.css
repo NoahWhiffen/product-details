@@ -1,0 +1,40 @@
+header {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: 180px;
+    margin-bottom: 25px;
+}
+
+.topHeader {
+    width: 100%;
+    height: 150px;
+    background-color: #392E5A;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.topLinks {
+    padding: 10px;
+    color: white;
+}
+
+.headerImage {
+    width: 60%;
+    padding-right: 10%;
+}
+
+.bottomHeader {
+    height: 25px;
+    padding: 10px;
+    padding-left: 30px;
+    background-color: #2E2547;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.bottomLinks {
+    padding: 10px;
+    color: white;
+}

@@ -1,10 +1,12 @@
-import './App.css'
+import './Components/ProductDetails.css'
 import ProductDetails from './Components/ProductDetails.jsx';
 
 function App() {
 
   return (
-    <ProductDetails productId={1}/>
+    <>
+      <ProductDetails productId={1}/>
+    </>
   );
 }
 
