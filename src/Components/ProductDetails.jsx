@@ -1,3 +1,7 @@
+// Title:  Final Sprint - Term 2
+// Author: Noah Whiffen - SD12
+// Dates:  December 5th, 2024 - 
+
 import React, { useState, useEffect } from 'react';
 import Header from "./Header.jsx"
 

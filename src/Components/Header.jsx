@@ -1,5 +1,11 @@
+// Title:  Final Sprint - Term 2
+// Author: Noah Whiffen - SD12
+// Dates:  December 7th, 2024 - December 8th, 2024 
+
 import React from 'react';
 import image from '../assets/images/annies_electronics.jpg';
+import accountImage from '../assets/images/account_icon.png'
+import shoppingBag from '../assets/images/shopping_bag.png'
 import './Header.css';
 
 function Header() {
@@ -8,16 +14,23 @@ function Header() {
             <div className="topHeader">
                 <img 
                 className='headerImage'
-                src={image}/>
-                <a 
+                src={image}
+                alt="Annie's Electronics Header"/>
+                <a
                 href='#'
-                className="topLinks"
+                className="headerLinks"
                 >
+                    <img src={accountImage}
+                        className='IconImages'
+                        alt='Account Icon'/>
                     My Account
                 </a>
                 <a 
                 href='#'
-                className="topLinks">
+                className="headerLinks">
+                    <img src={shoppingBag}
+                         className='IconImages'
+                         alt='Shopping Bag Icon'/>
                     Bag
                 </a>
             </div>
@@ -25,17 +38,17 @@ function Header() {
                 <nav>
                     <a
                     href='#'
-                    className='bottomLinks'>
+                    className='headerLinks'>
                         Shop
                     </a>
                     <a
                     href='#'
-                    className='bottomLinks'>
+                    className='headerLinks'>
                         Support
                     </a>
                     <a
                     href='#'
-                    className='bottomLinks'>
+                    className='headerLinks'>
                         About Us
                     </a>
                 </nav>
