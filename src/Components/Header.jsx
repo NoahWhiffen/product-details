@@ -3,9 +3,9 @@
 // Dates:  December 7th, 2024 - December 8th, 2024 
 
 import React from 'react';
-import image from '../assets/images/annies_electronics.jpg';
-import accountImage from '../assets/images/account_icon.png'
-import shoppingBag from '../assets/images/shopping_bag.png'
+import image from '/assets/images/annies_electronics.jpg';
+import accountImage from '/assets/images/account_icon.png'
+import shoppingBag from '/assets/images/shopping_bag.png'
 import './Header.css';
 
 function Header() {

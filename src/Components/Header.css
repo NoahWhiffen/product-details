@@ -12,8 +12,8 @@ html, body {
 header {
     display: flex;
     flex-direction: column;
-    width: 100%;
     position: absolute;
+    width: 100%;
     top: 0;
     margin-bottom: 30px;
     box-sizing: border-box;

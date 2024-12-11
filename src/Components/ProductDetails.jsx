@@ -4,20 +4,26 @@
 
 import React, { useState, useEffect } from 'react';
 import Header from "./Header.jsx"
+import shoppingBag from '/assets/images/shopping_bag.png'
 
 function ProductDetails({productId}) {
 	const [product, setProduct] = useState(null);
 	const [quantity, setQuantity] = useState(1);
 
-	useEffect(() => {
-			fetch('./src/db.json')
-					.then(response => response.json())
-					.then(data => {
-							const selectedProduct = data.find(item => item.id === productId);
-							setProduct(selectedProduct);
-					})
-					.catch(error => console.error('Error fetching product data:', error));
-	}, [productId]);
+    useEffect(() => {
+        fetch('./db.json')
+            .then(response => response.json())
+            .then(data => {
+                console.log('Fetched data:', data); 
+                if (data.products && Array.isArray(data.products)) {
+                    const selectedProduct = data.products.find(item => item.id === String(productId));
+                    setProduct(selectedProduct);
+                } else {
+                    console.error('No products array found in the data.');
+                }
+            })
+            .catch(error => console.error('Error fetching product data:', error));
+    }, [productId]);
 
 	const handleQuantityChange = (event) => {
 		setQuantity(Number(event.target.value));
@@ -33,42 +39,10 @@ function ProductDetails({productId}) {
                 <Header></Header>
                 <div className='wrapper'>
                         <div className='image-container'>
-                                <img src={product.image} alt='Placeholder alt text'/>
+                                <img  className="productImage" src={product.image} alt={product.name}/>
                                 <p>
                                     {product.description}
                                 </p>
-                        </div>
-                        <div className='delivery-container'>
-                            <p>
-                                FREE delivery Tuesday, December 10th
-                            </p>
-                            <p>
-                                Or fastest delivery, Monday, December 9th.
-                            </p>
-                            <label>
-                                In Stock
-                                <select className='dropdown'
-                                                value={quantity}
-                                                onChange={handleQuantityChange}>
-                                    <option value={1}>1</option>
-                                    <option value={2}>2</option>
-                                    <option value={3}>3</option>
-                                    <option value={4}>4</option>
-                                    <option value={5}>5</option>
-                                    Quantity: 
-                                </select>
-                            </label>
-                            <h2>
-                                Add a Protection Plan:
-                            </h2>
-                            <input type="radio" id="plan3year" name="protectionPlan" value="3-Year" />
-                    <label htmlFor="plan3year">3-Year Protection Plan for $64.99</label>
-                    <input type="radio" id="plan4year" name="protectionPlan" value="4-Year" />
-                    <label htmlFor="plan4year">4-Year Protection Plan for $84.99</label>
-                    <input type="radio" id="plan5year" name="protectionPlan" value="5-Year" />
-                    <label htmlFor="plan5year">5-Year Protection Plan for $104.99</label>
-                    <input type="radio" id="giftReceipt" name="giftReceipt" />
-                    <label htmlFor="giftReceipt">Add a gift receipt for easy returns</label>
                         </div>
                         <div className='price-container'>
                             <p>
@@ -76,11 +50,45 @@ function ProductDetails({productId}) {
                                 <br/>
                                 ${product.price}
                             </p>
-                            <button>
-                                Add to Cart
+                            <button className='cartButton'>
+                                <img src={shoppingBag} 
+                                     className='shoppingBag'/>
+                                Add to Bag
                             </button>
+                            <div className='delivery-container'>
+                                <p>
+                                    FREE delivery Tuesday, December 10th
+                                </p>
+                                <p>
+                                    Or fastest delivery, Monday, December 9th.
+                                </p>
+                                <label>
+                                    In Stock
+                                    <select className='dropdown'
+                                                    value={quantity}
+                                                    onChange={handleQuantityChange}>
+                                        <option value={1}>1</option>
+                                        <option value={2}>2</option>
+                                        <option value={3}>3</option>
+                                        <option value={4}>4</option>
+                                        <option value={5}>5</option>
+                                        Quantity: 
+                                    </select>
+                                </label>
+                                <h2>
+                                    Add a Protection Plan:
+                                </h2>
+                                <input type="radio" id="plan3year" name="protectionPlan" value="3-Year" />
+                                <label htmlFor="plan3year">3-Year Protection Plan for $64.99</label>
+                                <input type="radio" id="plan4year" name="protectionPlan" value="4-Year" />
+                                <label htmlFor="plan4year">4-Year Protection Plan for $84.99</label>
+                                <input type="radio" id="plan5year" name="protectionPlan" value="5-Year" />
+                                <label htmlFor="plan5year">5-Year Protection Plan for $104.99</label>
+                                <input type="radio" id="giftReceipt" name="giftReceipt" />
+                                <label htmlFor="giftReceipt">Add a gift receipt for easy returns</label>
+                            </div>
                         </div>
-                    </div>
+                </div>
                 </>
     );
 }
