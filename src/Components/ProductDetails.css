@@ -96,20 +96,28 @@ body {
 
 span {
   color: #00ff00;
+  padding-right: 5px;
+  vertical-align: middle;
+}
+
+h2 {
+  font-size: 32px;
+  margin-bottom: 15px;
 }
 
 .radio-container {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 10px;
   font-size: 22px;
+  padding: 5px;
 }
 
 .radio-container input[type="radio"] {
   margin-right: 10px;
 }
 
-/* .dropdown {
-
+.dropdown {
+  width: 80px;
+  padding-left: 5px;
 }
