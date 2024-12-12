@@ -12,12 +12,14 @@ html, body {
 header {
     display: flex;
     flex-direction: column;
-    position: absolute;
+    position: relative;
     width: 100%;
     top: 0;
-    margin-bottom: 30px;
+    margin-bottom: 0;
     box-sizing: border-box;
     font-size: 1.25rem;
+    padding-top: 30px;
+    font-family: 'Roboto, sans-serif';
 }
 
 .topHeader {

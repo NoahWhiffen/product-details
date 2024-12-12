@@ -5,26 +5,34 @@
 body {
   width: 80%;
   margin: auto;
-
+  font-family: 'Roboto', sans-serif;
 }
 
 .wrapper {
-  background-color: #FFF8F0;
+  height: 100vh;
+  width: 80%;
+  background-color: #F4d06f;
   border-radius: 15px;
   display: flex;
   text-align: center;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
+  margin: 30px auto;
+  padding: 0;
 }
 
 .image-container {
-  height: 100%;
+  height: auto;
+  max-height: 1000px;
   width: 50%;
-  margin-top: 15px;
   display: flex;
   flex-direction: column;
   background-color: white;
-  
+  padding: 10px 50px;
+  margin: 50px 30px;
+  font-size: 24px;
+  border-radius: 15px;
+
 }
 
 .productImage {
@@ -32,6 +40,7 @@ body {
   max-width: 500px;
   height: 275px;
   max-height: 500px;
+  padding-left: 70px;
 }
 
 .price-container {
@@ -41,6 +50,17 @@ body {
   flex-direction: column;
   background-color: #9dd9d2;
   font-size: 40px;
+  padding: 10px;
+  margin: 10px;
+  align-items: center;
+  margin: 50px 30px;
+  border-radius: 15px;
+}
+
+.button-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .cartButton {
@@ -50,6 +70,7 @@ body {
   width: 230px;
   height: 68px;
   font-size: 24px;
+  margin: 20px;
 }
 
 .shoppingBag {
@@ -60,13 +81,35 @@ body {
 }
 
 .delivery-container {
+  width: 95%;
+  max-width: 1000px;
+  max-height: 400px;
   display: flex;
   flex-direction: column;
   background-color: #fff8f0;
-  font-size: 16px;
+  font-size: 24px;
+  height: auto;
+  margin-top: 50px;
+  padding: 30px;
+  border-radius: 15px;
+}
+
+span {
+  color: #00ff00;
+}
+
+.radio-container {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+  font-size: 22px;
+}
+
+.radio-container input[type="radio"] {
+  margin-right: 10px;
 }
 
 /* .dropdown {
 
 }
-

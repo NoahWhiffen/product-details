@@ -47,23 +47,25 @@ function ProductDetails({productId}) {
                         <div className='price-container'>
                             <p>
                                 {product.name}
-                                <br/>
-                                ${product.price}
                             </p>
-                            <button className='cartButton'>
-                                <img src={shoppingBag} 
-                                     className='shoppingBag'/>
-                                Add to Bag
-                            </button>
+                            <div className='button-wrapper'>
+                                <p>
+                                    ${product.price}
+                                </p>
+                                <button className='cartButton'>
+                                    <img src={shoppingBag} 
+                                        className='shoppingBag'/>
+                                    Add to Bag
+                                </button>
+                            </div>
                             <div className='delivery-container'>
                                 <p>
                                     FREE delivery Tuesday, December 10th
-                                </p>
-                                <p>
+                                    <br/>
                                     Or fastest delivery, Monday, December 9th.
                                 </p>
                                 <label>
-                                    In Stock
+                                    <span>In Stock</span>
                                     <select className='dropdown'
                                                     value={quantity}
                                                     onChange={handleQuantityChange}>
@@ -78,14 +80,22 @@ function ProductDetails({productId}) {
                                 <h2>
                                     Add a Protection Plan:
                                 </h2>
-                                <input type="radio" id="plan3year" name="protectionPlan" value="3-Year" />
-                                <label htmlFor="plan3year">3-Year Protection Plan for $64.99</label>
-                                <input type="radio" id="plan4year" name="protectionPlan" value="4-Year" />
-                                <label htmlFor="plan4year">4-Year Protection Plan for $84.99</label>
-                                <input type="radio" id="plan5year" name="protectionPlan" value="5-Year" />
-                                <label htmlFor="plan5year">5-Year Protection Plan for $104.99</label>
-                                <input type="radio" id="giftReceipt" name="giftReceipt" />
-                                <label htmlFor="giftReceipt">Add a gift receipt for easy returns</label>
+                                <div className='radio-container'>
+                                    <input type="radio" id="plan3year" name="protectionPlan" value="3-Year" />
+                                    <label htmlFor="plan3year">3-Year Protection Plan for $64.99</label>
+                                </div>
+                                <div className='radio-container'>
+                                    <input type="radio" id="plan4year" name="protectionPlan" value="4-Year" />
+                                    <label htmlFor="plan4year">4-Year Protection Plan for $84.99</label>
+                                </div>
+                                <div className='radio-container'>
+                                    <input type="radio" id="plan5year" name="protectionPlan" value="5-Year" />
+                                    <label htmlFor="plan5year">5-Year Protection Plan for $104.99</label>
+                                </div>
+                                <div className='radio-container'>
+                                    <input type="radio" id="giftReceipt" name="giftReceipt" />
+                                    <label htmlFor="giftReceipt">Add a gift receipt for easy returns</label>
+                                </div>
                             </div>
                         </div>
                 </div>
